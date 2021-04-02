@@ -9,6 +9,7 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
+    this.setState({ innerWidth: window.innerWidth });
     window.addEventListener("resize", this.handleResize);
   }
   componentWillUnmount() {
@@ -21,10 +22,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          {console.log(
-            this.state.innerWidth < 1080,
-            typeof this.state.innerWidth
-          )}
           {this.state.innerWidth > 740 ? (
             <img
               src="./img/zen7_desktop_dark.png"
